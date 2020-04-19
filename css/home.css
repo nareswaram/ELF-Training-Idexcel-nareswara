@@ -1,0 +1,20 @@
+form{
+    border: 1px solid greenyellow;
+    height: 250px;
+    width: 350px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+}
+body{
+    background-color:lavender;
+}
+input[type="button"]{
+    height: 30px;
+    width: 80px;
+    margin-top: 10px;
+}
+input[type="button"]:hover{
+    background-color: lightgreen;
+    color: black;
+}

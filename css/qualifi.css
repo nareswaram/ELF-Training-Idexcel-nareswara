@@ -1,0 +1,14 @@
+h3{
+    color: cornflowerblue;
+}
+body{
+    border: 1px solid darkcyan;
+    text-align: center;
+}
+div{
+    border: 1px solid darksalmon;
+    background-color: lightcyan;
+}
+.q1{
+    color: lightcoral;
+}
