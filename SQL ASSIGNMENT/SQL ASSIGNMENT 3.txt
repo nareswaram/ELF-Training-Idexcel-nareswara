@@ -1,0 +1,86 @@
+1)WRITE A QUERY TO DISPLAY TOTAL SALARY NEEDED TO PAY EACH JOB IN EMPLOYEE TABLE.
+	Ex : select designation,sum(salary) from employee group by designation;
+2)WRITE A QUERY TO DISPLAY THE HIRE DATE ON WHICH AT LEAST 3 EMPLOYEES WHERE HIRED.
+	Ex : select hire_date ,count(hire_date) from employee  group by hire_date having count(hire_date)>=3;
+3)WRITE A QUERY TO DISPLAY THE DEPARTMENT NUMBER WHICH HAS MORE THAN 2 EMPLOYEES AND THE TOTAL AMOUNT REQUIRED 
+	                                 TO PAY THE MONTHLY SALARIES OF ALL THE EMPLOYEES IN THAT DEPARTMENT SHOULD BE MORE THAN 9000.
+	Ex : select deptno from employee group by dept_no having count(dept_no)>2 and sum(salary)>9000;
+4)WRITE A QUERY TO DISPLAY NUMBER OF EMPLOYEES WORKING IN EACH DEPARTMENT AND
+	                                ITS’ AVERAGE SALARY BY EXCLUDING ALL THE EMPLOYEES WHOSE SALARY IS LESS THAN THEIR COMMISSION.
+	Ex : select deptno,count(ename),avg(salary) from employee where salary< comm group by dept_no;
+5)WRITE A QUERY TO DISPLAY THE SALARIES WHICH HAS REPETITIONS IN THE SAL COLUMN OF EMPLOYEE TABLE.
+	Ex : select salary ,count(salary)from employee group by salary having count(salary)>1;
+6)WRITE A QUERY TO DISPLAY THE EMPLOYEE NAME ONLY IF MORE THAN ONE PERSON IN THE EMPLOYEES OF THE COMPANY HAS SAME NAME.
+	Ex : select ename, count(ename) from employee group by ename having count(ename)>1;
+7)WRITE A QUERY TO DISPLAY THE DEPARTMENT NUMBER WHOSE AVERAGE SALARY IS BETWEEN 25000 AND 30000.
+	Ex : select deptno from employee group by dept_no having avg(salary) between 25000 and 30000;
+8)WRITE A QUERY TO DISPLAY THE NUMBER OF EMPLOYEES ONLY IF THEY ARE WORKING AS MANAGER OR ANALYST AND
+	 THEIR ANNUAL SAL SHOULD END WITH A ZERO, IN EACH DEPARTMENT.
+	Ex : select count(*) from employee where designation in('Manager','Analyst') and cast(salary*12 as varchar) like '%0' and dept_no in(10,20,30,40);
+9)WRITE A QUERY TO DISPLAY NO OF CLERKS WORKING IN EACH DEPARTMENT.
+	Ex : select designation,count(designation) from employee where designation='clerk' group by designation having count(designation)>1;
+10)WRITE A QUERY TO DISPLAY HIGHEST SALARY GIVEN TO A MANAGER  IN EACH DEPARTMENT.
+	Ex : select deptno,max(salary) from employee where desgination='Manager' group by dept_no having dept_no in(10,20,30,40);
+11)WRITE A QUERY TO DISPLAY NO OF TIMES THE SALARIES HAVE REPEATED IN THE EMP TABLE.
+	Ex : select count(salary)from employee group by salary having count(salary)>1;
+12)WRITE A QUERY TO DISPLAY DEPTNO AND MUNBER OF EMPLOYEES WHORKING IN EACH DEPARTMENT EXCEPT FOR THOSE WORKING IN DEPT 10
+	Ex : select deptno,count(*) from employee where dept_no not in(10) group by dept_no;
+13)WAQTD NUMBER OF EMPLOYEES GETTING COMISSION IN EACH DEPARTMENT
+	Ex : select count(*) from employee where comm is not null and dept_no in(10,20,30) group by dept_no;
+14)WAQTD NUMBER OF EMPLOYEES GETTING SALARY MORE THAN 1600 EXCLUDING ALL THE MANAGERS IN EACH DEPARTEMNT 
+	Ex : select count(*) from employee where salary>1600 and designation not in('Manager') and dept_no in(10,20,30,40) group by dept_no;
+===15)WAQTD AVERAGE SALARY NEEDED TO PAY ALL THE EMPLOYEES WHO ARE HAVING A REPORTING MANAGER IN EACH JOB .
+	Ex : select avg(salary) from employee where 
+16)WAQTD NUMBER OF EMPLOYEES HIRED INTO THE SAME DEPARTMENT ON THE SAME DAY
+	Ex : select hiredate,deptno,count(*) from employee group by hire_date, deptno having count(hire_date)>=2 and count(dept_no)>=2;
+17)WAQTD NUMBER OF EMPLOYEES GETTING THE SAME SALARY , WORKING IN THE SAME DEPARTMENT 
+	Ex : select salary,deptno,count(*) from employee group by salary,dept_no having count(salary)>=2 and count(dept_no)>=2;
+18)WAQTD MAXIMUM SALARY GIVEN IN EACH DESIGNATION EXCLUDING THOSE WHOS NAME STARTS WITH ‘K’
+	Ex : select desgination,max(salary) from employee where ename not like 'k%' group by designation; 
+===19)WAQTD NUMBER OF EMPLOYEES REPORTING TO 7839 IN EACH DEPT
+	Ex : select count(*) from employee where 
+20)WAQTD NUMBER OF EMPLOYEE NAMES STARTING WITH AN VOWEL IN EACH DEPARTMENT 
+	Ex : select count(*) from employee where ename like 'a%' or ename like 'e%' or ename like 'i%' or ename like 'o%' or ename like 'u%' group by dept_no;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

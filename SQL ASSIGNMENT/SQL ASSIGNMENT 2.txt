@@ -1,0 +1,38 @@
+1. List employees whose name having 4 characters
+	EX : select * from employee where length(ename)=4;
+2.List employees whose job is having 7 characters
+	EX : select * from employee where length(desigination)=7;
+3.Find out how many times letter 'S' occurs in 'qspiders'.
+	EX : select length('qspiders')-length(replace('qspiders','s','')) as "number of s";
+4.List the employees whose job is having last 3 characters as 'man'
+	EX : select * from employee where right(desgination,3)='man';
+5.List employees whose job is having first 3 characters as 'man'
+	EX : select * from employee where left(desgination,3)='man';
+6. Display all the names whose name is having exactly 1 'L'
+	EX : select * from employee where length(ename)-length(replace(ename,'l',''))=1;
+7. Display dept names which are having letter 'O'
+	EX : select dept_no from employee where position('o'in dept_no)!=0;
+8. Display the output as shown below,
+   Scott working as a clerk earns 3000 in dept 20
+	EX : select concat(ename,concat(' working as a ',concat(' clerks earns ',salary,concat('in dept',deptno)))) from employee;
+9. Calculate number of L in string 'HELLLLL'
+	EX : select length('helllll')-length(replace('helllll','l','')) as "number of l";
+10.Display all the employees whose job has a string 'MAN'
+	EX : select * from employee where position('man' in desgination)!=0;
+11. Display all the employees whose job starts with string 'MAN'
+	EX : select * from employee where left(desgination,3)='MAN';
+12. Display all the employees whose job ends with string 'MAN'
+	EX : select * from employee where right(desgination,3)='MAN';
+13. Display first 3 characters of ename in lower case and rest everything in upper case.
+	EX : select ename, lower(substr(ename,1,3))||upper(substr(ename,4)) from employee;
+14. Display the result from employee table as below.
+                                SMITH is a CLERK and gets salary 2000 
+	EX : select ename ||'is a'|| desgination || 'and gets salary'|| salary from employee;
+				or
+	EX : select concat(ename,concat(' is a ',concat(designation),concat(' and gets salary',salary))) from employee;
+15.list the employees hired on a Wednesday
+	EX : select * from employee where to_char(hire_date,'dy')='wed';
+16.list the employees hired on a leap year
+	EX : select * from employee where (cast(to_char(hire_date,'YYYY') as integer)%4=0 and cast(to_char(hire_date,'YYYY') as integer)%100<>0) or cast(to_char(hire_date,'YYYY')as integer)%400=0;
+17.list the employees hired on a Sunday in the month of may
+	EX : select ename from employee where to_char(hire_date,'mon')='may' and to_char(hire_date,'dy')='sun';
