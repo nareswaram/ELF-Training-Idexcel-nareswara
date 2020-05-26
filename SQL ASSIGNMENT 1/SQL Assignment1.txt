@@ -1,0 +1,60 @@
+1.list all the emp whose sal is null
+	Ex : select * from employee where salary is null;
+2.list all the emp who dnt have a deptno
+	Ex : select * from employee where dept_no is null;
+3.list all the sales man in deptno 30
+	Ex : select * from employee where designation='sales_man' and dept_no in (30);
+4.list all the salesman in dept no 30 and having sal greaterthan 1500
+	Ex : select * from employee where designation='sales_man' and dept_no in (30) and salary>1500;
+5.list all the emp who's name start with S or A
+	Ex : select * from employee where ename like 's%' or ename like'a%';
+6.list all the emp except those who are working in dept 10 & 20
+	Ex : select * from employee where dept_no not in(10,20);
+7.list all the emp who's name not start with S
+	Ex : select * from employee where ename not like 's%';
+8.who are having reporting manager in dept_no 10
+	Ex : select * from employee where designation='reporting_manager' and dept_no in(10);
+9.whose sal is null and working as clerk
+	Ex :select * from employee where salary is null and designation='clerk';
+10.who dnt have reporting manager in deptno 10 or 30
+	Ex : select * from employee where designation !=reporting_manager and dept_no in(10) or dept_no in(30); 
+11.all sales man in deptno30 with sal more than 2450
+ Ex : select * from employee where designation='sales_man' and dept_no in (30) and salary>2450;
+12.list all the analyst in dept no 20 and having salary greater than 2500
+	Ex : select * from employee where designation='analyst' and dept_no in (20) and salary>2500;
+13.list all the emp whose name starts with M or J
+	Ex : select * from employee where ename like 'm%'or ename like 'j%';
+=====14.list all the emp with annual salary except those who are working in dept 30
+	Ex : select * from employee where salary=salary*12 and dept_no not in(30);
+15.list the emp whose name does not end with ES or R
+	Ex : select * from employee where ename not like '%es' or ename not like '%r';
+16.list all the emp who are having reporting manager in dept 10 along with 10% hike in sal
+	Ex : select * from employee where designation='reporting_manager' and dept_no in (10) and salary=(salary/100)*10;
+17.display all the emp who are salesman having 'E' as the last but one character in ename but salary having exactly 4 character
+	Ex : select * from employee where designation='sales_man' and ename like '%e_' and cast(salary as varchar)like '____';
+18.display all the employes who are joined after year 81
+	Ex : select * from employee where hire_date>'1981/12/31';
+19. display all the employes who are joined in feb
+	Ex : select * from employee where cast (hire_date as varchar)like '____/02/__';
+20.list all the emp who are  not workingas manager and clerks in dept 10 and 20 with a salary in the range of 1000 to 3000
+	Ex : select * from employee where designation !='manager' and designation != 'clerk' and dept_no in (10,20) and salary between 1000 and 3000;
+21.list the employee whose sal not in the range of 1000 and 2000 and working in dept 10,20 or 30 except all salesman
+	Ex : select * from employee where salary between 1000 and 3000 and dept_no in(10,20)or dept_no in(30) and designation!='sales_man';
+22.list all the dept names which are having letter 'O' in their locations as well as their dept names
+	Ex : select * from employee where location like '%o%' and designation like '%o%';
+23.display all the emp whose job has string'man' in it
+	Ex : select * from employee where designation like '%man%';
+24.display the emp who are hired after 82 and before 87
+	Ex : select * from employee where hire_date between '1982/01/01' and '1987/12/31';
+==========25.WAQ to display  all the details of employees hired in nov and dec
+	Ex : select * from employee where cast(hire_date as varchar)like '%/11/%'and cast (hire_date as varchar)like '%/12/%';
+==========26. list all the emp names and commision for those emp's who earn commision more than their salary
+	Ex : 
+27.WAQ to display names and designation for all the emp having reporting manager and also their names starting with 'S'
+	Ex : select ename,designation from employee where designation='reporting_manager' and ename like 's%';
+28.WAQ T D name and salary of all the emp if their annual sal ends with '0'
+	Ex : select ename,salary from employee where cast(salary as varchar) like '%0';
+29.WAQ to display name of emp who's name starts with 'VOWEL'
+	Ex : select ename from employee where ename like 'a%' or ename like 'e%' or ename like 'i%' or ename like 'o%' or ename like 'u%'; 
+30.WAQ to display all record of emp where ename having atleast 2l in their names
+	Ex : select * from employee where ename like '%l%l%;
