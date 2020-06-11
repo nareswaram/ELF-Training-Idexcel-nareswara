@@ -1,0 +1,31 @@
+.cs{
+    margin-top: 30px;
+    margin-left: 10px;
+    font-size: 20px;
+    color: cornsilk;
+}
+form{
+    margin-left: 670px;
+}
+.nav-item{
+    font-size: 20px;
+    color: cornsilk;
+}
+input[type="submit"]{
+    background-color: gray;
+}
+.fr{
+    margin-left: 700px;
+}
+body{
+    background-color: lavender;
+}
+input[value="Create an account"]{
+    background-color: lawngreen;
+}
+.fd{
+    margin-left: 100px;
+}
+.hv:hover{
+    background-color: blue;
+}
